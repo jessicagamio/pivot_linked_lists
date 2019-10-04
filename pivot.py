@@ -103,7 +103,7 @@ class LinkedList(object):
         ll2=LinkedList()
 
         while curr:
-            if curr < pivot:
+            if curr.data < pivot:
                 ll1.add_node(curr)
                 self.head=curr.next
                 curr=self.head
@@ -115,4 +115,4 @@ class LinkedList(object):
         ll1.tail.next=ll2.head
 
         self.head=ll1.head
-        self.tail=ll2.tail
+        self.tail=ll2.tails
