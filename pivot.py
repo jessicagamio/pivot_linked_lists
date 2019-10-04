@@ -97,3 +97,22 @@ class LinkedList(object):
 
     def pivot(self, pivot):
         """Pivot list around value."""
+
+        curr = self.head
+        ll1=LinkedList()
+        ll2=LinkedList()
+
+        while curr:
+            if curr < pivot:
+                ll1.add_node(curr)
+                self.head=curr.next
+                curr=self.head
+            else:
+                ll2.add_node(curr)
+                self.head=curr.next
+                curr=self.head
+
+        ll1.tail.next=ll2.head
+
+        self.head=ll1.head
+        self.tail=ll2.tail
